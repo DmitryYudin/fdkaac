@@ -859,7 +859,7 @@ int main(int argc, char **argv)
         m4af_set_priming_mode(m4af, params.gapless_mode + 1);
         m4af_begin_write(m4af);
     }
-    frame_count = encode(&params, reader, encoder, aacinfo.frameLength, m4af);
+    frame_count = encode(&params, reader, encoder, 32/*aacinfo.frameLength*/, m4af);
     if (frame_count < 0)
         goto END;
     if (m4af) {
